@@ -864,12 +864,12 @@
 
 </div>
 <script>
-  function showTab(id) {
+  function showTab(id, push) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
     document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + id));
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({top: 0, behavior: 'smooth'}); if (push) { history.pushState({tab: id}, '', '#' + id); }
   }
-  document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
+  document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab, true))); window.addEventListener('popstate', function(e) { var tab = (e.state && e.state.tab) || (location.hash ? location.hash.slice(1) : 'home'); showTab(tab, false); }); var activeBtn = document.querySelector('.tab-btn.active'); history.replaceState({tab: activeBtn ? activeBtn.dataset.tab : 'home'}, '', location.pathname + (location.hash || ''));
 
   // ── CONTACT FORM SUBMISSION ──
   const contactForm = document.getElementById('contact-form');
