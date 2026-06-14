@@ -625,13 +625,25 @@
   </style>
   <style>
     /* logo image override */
-    .header-logo { background: none; border-radius: 0; padding: 0; height: 220px; }
+    .header-logo {
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
     .header-logo .logo-icon { display: none !important; }
     .header-logo .logo-text { display: none !important; }
     .header-logo .logo-photo {
       display: block !important;
       height: 100%;
       width: auto;
+      margin: 0 auto;
+      object-fit: contain;
+      object-position: center;
       border-radius: 14px;
       box-shadow: 0 2px 12px rgba(92,43,71,0.12);
     }
@@ -662,7 +674,7 @@
             <path d="M9,13 C15,7 17,0 16,-8 C8,-6 3,1 0,13 Z" fill="#f0c8c2"/>
           </g>
 
-          <text x="150" y="178" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" font-size="25" letter-spacing="7" fill="#3d1a30">DATING MENTOR</text>
+          <text x="150" y="178" text-anchor="middle" textLength="185" lengthAdjust="spacingAndGlyphs" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" font-size="26" fill="#3d1a30" style="text-rendering:geometricPrecision">DATING MENTOR</text>
           <text x="150" y="207" text-anchor="middle" font-family="'Dancing Script', cursive" font-size="29" fill="#d99a94">by Marisa</text>
           <text x="150" y="253" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" font-size="17" letter-spacing="1.2" fill="#3d1a30">Guidance. Clarity. Confidence.</text>
         </svg>
