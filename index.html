@@ -595,9 +595,25 @@
       .header-logo .logo-tagline span { font-size: 0.9rem; }
       .header-logo .logo-tagline::before,
       .header-logo .logo-tagline::after { width: 12px; }
-      nav { display: flex; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; justify-content: flex-start; width: 100%; gap: 4px; scrollbar-width: none; }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: visible;
+        justify-content: center;
+        width: 100%;
+        gap: 4px 6px;
+        scrollbar-width: auto;
+      }
       nav::-webkit-scrollbar { display: none; }
-      .tab-btn { font-size: 0.72rem; padding: 10px 14px; flex: 0 0 auto; white-space: nowrap; }
+      .tab-btn {
+        font-size: 0.64rem;
+        padding: 8px 8px;
+        flex: 0 1 auto;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.15;
+        letter-spacing: 0.06em;
+      }
       .about-grid, .offer-cols, .form-grid { grid-template-columns: 1fr; }
       .form-wrap { padding: 28px 20px; }
       .radio-group--row { flex-wrap: wrap; }
@@ -901,5 +917,57 @@
     sectionObserver.observe(section);
   });
 </script>
+
+<script>
+(function () {
+  function activateSection(tab, pushHistory) {
+    document.querySelectorAll('.panel').forEach(function (panel) {
+      panel.classList.remove('active');
+    });
+
+    var selectedPanel = document.getElementById('panel-' + tab);
+    if (selectedPanel) {
+      selectedPanel.classList.add('active');
+      selectedPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
+    });
+
+    if (pushHistory) {
+      var newHash = '#' + tab;
+      if (window.location.hash !== newHash) {
+        history.pushState({ tab: tab }, '', newHash);
+      }
+    }
+  }
+
+  window.showTab = function (tab, pushHistory) {
+    activateSection(tab, pushHistory !== false);
+  };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tab = btn.getAttribute('data-tab');
+        if (tab) activateSection(tab, true);
+      });
+    });
+
+    var initialTab = (window.location.hash || '#home').replace('#', '');
+    if (!document.getElementById('panel-' + initialTab)) initialTab = 'home';
+    history.replaceState({ tab: initialTab }, '', '#' + initialTab);
+    activateSection(initialTab, false);
+  });
+
+  window.addEventListener('popstate', function () {
+    var tab = (window.location.hash || '#home').replace('#', '');
+    if (!document.getElementById('panel-' + tab)) tab = 'home';
+    activateSection(tab, false);
+  });
+})();
+</script>
+
 </body>
 </html>
