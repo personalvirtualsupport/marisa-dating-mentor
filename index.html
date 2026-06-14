@@ -54,7 +54,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 148px;
+      height: 140px;
     }
     .header-logo {
       display: flex;
@@ -628,19 +628,29 @@
     }
   </style>
   <style>
-    /* logo image override */
-    .header-logo { background: none; border-radius: 0; padding: 0; height: 124px; }
+    /* logo redesign - crisp CSS rings + text, no raster image */
+    .header-logo { background: none; border-radius: 0; padding: 0; height: 100px; flex-direction: row; justify-content: center; align-items: center; gap: 14px; }
     .header-logo .logo-icon { display: none !important; }
     .header-logo .logo-text { display: none !important; }
-    .header-logo .logo-photo {
-      display: block !important;
-      height: 100%;
-      width: auto;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(92,43,71,0.12);
-    }
+    .logo-rings { position: relative; width: 54px; height: 54px; flex-shrink: 0; }
+    .logo-rings .ring { position: absolute; top: 8px; width: 38px; height: 38px; border: 3px solid var(--plum); border-radius: 50%; }
+    .logo-rings .ring-1 { left: 0; }
+    .logo-rings .ring-2 { left: 16px; }
+    .logo-rings .ring-dot { position: absolute; top: 0; left: 21px; width: 12px; height: 12px; border: 3px solid var(--gold); border-radius: 50%; background: var(--cream); }
+    .logo-text-new { display: flex; flex-direction: column; justify-content: center; line-height: 1.2; }
+    .logo-text-new .logo-title { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: 0.16em; font-size: 1.05rem; color: var(--plum); text-transform: uppercase; white-space: nowrap; }
+    .logo-text-new .logo-by { font-family: 'Dancing Script', cursive; font-size: 1.1rem; color: var(--text-mid); margin-top: 2px; white-space: nowrap; }
+    .logo-text-new .logo-slogan { font-family: 'Karla', sans-serif; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 4px; white-space: nowrap; }
     @media (max-width: 700px) {
-      .header-logo { padding: 0; height: 110px; }
+      .header-logo { height: 80px; gap: 10px; }
+      .logo-rings { width: 42px; height: 42px; }
+      .logo-rings .ring { width: 30px; height: 30px; top: 6px; }
+      .logo-rings .ring-1 { left: 0; }
+      .logo-rings .ring-2 { left: 12px; }
+      .logo-rings .ring-dot { width: 10px; height: 10px; left: 16px; top: 0; }
+      .logo-text-new .logo-title { font-size: 0.85rem; letter-spacing: 0.12em; }
+      .logo-text-new .logo-by { font-size: 0.9rem; }
+      .logo-text-new .logo-slogan { font-size: 0.5rem; letter-spacing: 0.12em; }
     }
   </style>
 </head>
@@ -650,7 +660,16 @@
   <header>
     <div class="header-inner">
       <div class="header-logo" onclick="showTab('home', true)">
-        <img class="logo-photo" src="marisa-logo-jewish.png" alt="Jewish Dating Mentor by Marisa" />
+        <div class="logo-rings" aria-hidden="true">
+          <span class="ring ring-1"></span>
+          <span class="ring ring-2"></span>
+          <span class="ring-dot"></span>
+        </div>
+        <div class="logo-text-new">
+          <span class="logo-title">Jewish Dating Mentor</span>
+          <span class="logo-by">by Marisa</span>
+          <span class="logo-slogan">Guidance · Clarity · Confidence</span>
+        </div>
         <svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="32" cy="13" r="3.5" fill="none" stroke="#fdf6ee" stroke-width="2.5"/>
           <circle cx="24" cy="38" r="16" fill="none" stroke="#fdf6ee" stroke-width="2.5"/>
