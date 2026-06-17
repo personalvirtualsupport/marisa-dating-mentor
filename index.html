@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jewish Dating Mentor | Dating Guidance for Jewish Singles | Marisa Tuchinsky</title>
+  <title>Jewish Dating Mentor by Marisa Tuchinsky</title>
   <meta name="description" content="Private Jewish dating mentoring with Marisa Tuchinsky, offering practical dating guidance, shidduch support, and clarity for singles navigating dating decisions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,12 +43,24 @@
     /* ── HEADER ── */
     header {
       background: var(--white);
-      border-bottom: 1px solid var(--border);
+      border-bottom: none;
       box-shadow: 0 2px 16px rgba(92,43,71,0.07);
       position: sticky;
       top: 0;
       z-index: 100;
       padding: 0 32px;
+      overflow: hidden;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: var(--border);
+      z-index: 5;
+      pointer-events: none;
     }
     .header-inner {
       max-width: 1400px;
@@ -56,7 +68,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 250px;
+      height: 360px;
+      padding: 18px 0 34px;
+      box-sizing: border-box;
     }
     .header-logo {
       display: flex;
@@ -135,7 +149,7 @@
 
     /* ── ONE-PAGE SECTIONS ── */
     main { flex: 1; }
-    .panel { display: block; scroll-margin-top: 168px; }
+    .panel { display: block; scroll-margin-top: 370px; }
     .panel.active { display: block; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(6px); }
@@ -657,7 +671,8 @@
       background: none;
       border-radius: 0;
       padding: 0;
-      height: 260px;
+      height: 300px;
+      max-height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -666,14 +681,16 @@
     .header-logo .logo-text { display: none !important; }
     .header-logo .logo-photo {
       display: block !important;
-      width: 275px;
+      width: 270px;
       height: auto;
-      max-height: 260px;
+      max-height: 285px;
       object-fit: contain;
+      flex-shrink: 0;
     }
     @media (max-width: 700px) {
-      .header-logo { padding: 0; height: 170px; }
-      .header-logo .logo-photo { width: 205px; height: auto; max-height: 195px; }
+      .header-inner { height: auto; min-height: 260px; padding: 16px 0 32px; }
+      .header-logo { padding: 0; height: 215px; max-height: 215px; }
+      .header-logo .logo-photo { width: 190px; height: auto; max-height: 200px; }
     }
   </style>
 </head>
@@ -683,7 +700,7 @@
   <header>
     <div class="header-inner">
       <div class="header-logo" onclick="showTab('home', true)">
-        <img class="logo-photo" src="marisa-logo-sharp-slogan.png?v=1" alt="Jewish Dating Mentor by Marisa logo">    
+        <img class="logo-photo" src="marisa-logo-sharp-slogan.png?v=20" alt="Jewish Dating Mentor by Marisa logo">    
         <svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none;">
           <circle cx="32" cy="13" r="3.5" fill="none" stroke="#fdf6ee" stroke-width="2.5"></circle>
           <circle cx="24" cy="38" r="16" fill="none" stroke="#fdf6ee" stroke-width="2.5"></circle>
