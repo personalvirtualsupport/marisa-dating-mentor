@@ -249,12 +249,35 @@
       border-radius: 0 16px 16px 0;
       padding: 28px 32px;
       margin: 32px 0;
+      max-width: 440px;
+      width: fit-content;
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.3rem;
       font-style: italic;
       color: var(--text);
       line-height: 1.7;
     }
+
+    .quote-block p,
+    .quote-block {
+      text-align: left;
+    }
+
+    @media (max-width: 700px) {
+      .quote-block {
+        max-width: 100%;
+        width: 100%;
+        padding: 24px 28px;
+      }
+    }
+    /* Make quote boxes inside white cards stretch across like the reference image */
+    .warm-card .quote-block {
+      display: block;
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+    }
+
 
     /* ── WHAT IS ── */
     #panel-what { background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); }
@@ -699,8 +722,7 @@
           <p>A dating mentor is someone you can turn to throughout the dating process, a steady, impartial sounding board who helps you think through the decisions and challenges in front of you.</p>
           <p>Whether you're unsure how to handle a situation, weighing what comes next, or simply trying to understand your own feelings, mentoring gives you a private place to talk it all through.</p>
           <div class="quote-block">
-           Its not about telling you what to do. 
-           It is about helping you gain clarity and trust your own judgment.
+            It’s not about telling you what to do. It is about helping you gain clarity and trust your own judgment.
           </div>
           <p>Dating mentoring is not therapy or counseling. It is practical, personal guidance from someone who understands the challenges of dating and is committed to helping you make thoughtful, confident decisions.</p>
         </div>
