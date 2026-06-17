@@ -652,18 +652,40 @@
   </style>
   <style>
     /* logo image override */
-    .header-logo { background: none; border-radius: 0; padding: 0; height: 180px; }
+    .header-logo {
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
     .header-logo .logo-icon { display: none !important; }
     .header-logo .logo-text { display: none !important; }
     .header-logo .logo-photo {
       display: block !important;
-      height: 165px;
-      width: 165px;
+      height: 142px;
+      width: 170px;
       object-fit: contain;
+    }
+    .header-logo .logo-subline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      line-height: 1.1;
+      color: var(--plum);
+      white-space: nowrap;
+      margin-top: 2px;
+      text-align: center;
     }
     @media (max-width: 700px) {
       .header-logo { padding: 0; height: 155px; }
-      .header-logo .logo-photo { height: 140px; width: 140px; }
+      .header-logo .logo-photo { height: 118px; width: 150px; }
+      .header-logo .logo-subline { font-size: 0.82rem; letter-spacing: 0.045em; }
     }
   </style>
 </head>
@@ -674,6 +696,7 @@
     <div class="header-inner">
       <div class="header-logo" onclick="showTab('home', true)">
         <img class="logo-photo" src="marisa-logo-new.png" alt="Jewish Dating Mentor by Marisa logo">
+        <div class="logo-subline">Guidance. Clarity. Confidence.</div>
         <svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none;">
           <circle cx="32" cy="13" r="3.5" fill="none" stroke="#fdf6ee" stroke-width="2.5"></circle>
           <circle cx="24" cy="38" r="16" fill="none" stroke="#fdf6ee" stroke-width="2.5"></circle>
