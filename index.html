@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jewish Dating Mentor by Marisa Tuchinsky</title>
+  <meta name="description" content="Private Jewish dating mentoring with Marisa Tuchinsky, offering practical dating guidance, shidduch support, and clarity for singles navigating dating decisions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Caveat:wght@500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -652,40 +653,32 @@
   </style>
   <style>
     /* logo image override */
+    .header-inner {
+      height: 240px;
+    }
+    /* logo image override */
     .header-logo {
       background: none;
       border-radius: 0;
       padding: 0;
-      height: 180px;
+      height: 220px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0;
     }
     .header-logo .logo-icon { display: none !important; }
     .header-logo .logo-text { display: none !important; }
     .header-logo .logo-photo {
       display: block !important;
-      height: 150px;
-      width: 178px;
+      width: 210px;
+      height: auto;
+      max-height: 210px;
       object-fit: contain;
     }
-    .header-logo .logo-subline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      line-height: 1.1;
-      color: var(--plum);
-      white-space: nowrap;
-      margin-top: 4px;
-      text-align: center;
-    }
     @media (max-width: 700px) {
-      .header-logo { padding: 0; height: 155px; }
-      .header-logo .logo-photo { height: 122px; width: 150px; }
-      .header-logo .logo-subline { font-size: 0.82rem; letter-spacing: 0.045em; }
+      .header-inner { height: auto; }
+      .header-logo { padding: 0; height: 175px; }
+      .header-logo .logo-photo { width: 165px; height: auto; max-height: 165px; }
     }
   </style>
 </head>
@@ -695,7 +688,7 @@
   <header>
     <div class="header-inner">
       <div class="header-logo" onclick="showTab('home', true)">
-        <img class="logo-photo" src="new logo.png?v=10" alt="Jewish Dating Mentor by Marisa logo">    
+        <img class="logo-photo" src="new%20logo.png?v=20" alt="Jewish Dating Mentor by Marisa logo">    
         <svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none;">
           <circle cx="32" cy="13" r="3.5" fill="none" stroke="#fdf6ee" stroke-width="2.5"></circle>
           <circle cx="24" cy="38" r="16" fill="none" stroke="#fdf6ee" stroke-width="2.5"></circle>
