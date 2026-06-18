@@ -627,7 +627,7 @@
       <div class="home-inner">
         <p class="eyebrow">Jewish Dating Mentor</p>
         <h1>Navigating the dating journey<br>with <em>clarity and direction</em></h1>
-        <p class="home-intro">We are all davening to find our bashert. We know that ultimately everything comes from Hashem. And yet we still need to do our hishtadlus — to put in the effort, seek guidance, and navigate the journey with intention. Sometimes the most meaningful step is having a trusted, private person in your corner.</p>
+        <p class="home-intro">We are all davening to find our bashert. We know that ultimately everything comes from Hashem. And yet we still need to do our hishtadlus, to put in the effort, seek guidance, and navigate the journey with intention. Sometimes the most meaningful step is having a trusted, private person in your corner.</p>
         <button class="cta-btn" onclick="showTab('contact', true)">Let's talk</button>
         <p class="privacy-note">Every enquiry is private and handled with complete discretion</p>
       </div>
@@ -646,7 +646,7 @@
           </svg>
         </div>
         <div class="warm-card">
-          <p>A dating mentor is someone you can turn to throughout the dating process — a steady, impartial sounding board who helps you think through the decisions and challenges in front of you.</p>
+          <p>A dating mentor is someone you can turn to throughout the dating process, a steady, objective sounding board who helps you think through the decisions and challenges in front of you.</p>
           <p>Whether you're unsure how to handle a situation, weighing what comes next, or simply trying to understand your own feelings, mentoring gives you a private place to work it all through.</p>
           <div class="quote-block">
             It's not about telling you what to do. It's about helping you gain clarity and trust your own judgment.
@@ -736,7 +736,7 @@
             <div class="step">
               <div class="step-num">3</div>
               <h4>Ongoing support</h4>
-              <p>Continue as needed — one session or many — at whatever pace works for you and your journey.</p>
+              <p>Continue as needed, one session or many, at whatever pace works for you and your journey.</p>
             </div>
           </div>
         </div>
@@ -761,18 +761,18 @@
             <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
             <p>From my very first meeting with Mrs. Tuchinsky, I felt I was in the right place. I initially came with some hesitation, not knowing what to expect, but her warmth and genuine care immediately put me at ease. She created an environment where I felt comfortable opening up and sharing honestly.</p>
             <p>Our meetings gave me direction and practical tools that helped me approach dating with greater confidence and self-awareness. What stood out most was how genuine and objective her guidance felt. I never felt judged or pressured. Instead, I felt heard, understood, and guided with wisdom and sincere care.</p>
-            <span class="testimonial-source">— Esti K.</span>
+            <span class="testimonial-source">Esti K.</span>
           </div>
           <div class="testimonial-card">
             <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
-            <p>At a particularly confusing and emotional point in my dating journey, I needed someone objective — someone who could help me sort through my thoughts without outside expectations or personal bias. Mrs. Tuchinsky made herself available on short notice, and that conversation made an enormous difference.</p>
+            <p>At a particularly confusing and emotional point in my dating journey, I needed someone objective, someone who could help me sort through my thoughts without outside expectations or personal bias. Mrs. Tuchinsky made herself available on short notice, and that conversation made an enormous difference.</p>
             <p>She listened carefully, asked thoughtful questions, and helped me notice things I hadn't considered on my own. Her ability to bring calm to an overwhelming situation was truly invaluable. I left feeling grounded, clear-minded, and confident about my next steps.</p>
-            <span class="testimonial-source">— Chavi M.</span>
+            <span class="testimonial-source">Chavi M.</span>
           </div>
           <div class="testimonial-card">
             <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
             <p>Speaking with Mrs. Tuchinsky brought me perspective and a real sense of calm. Her warmth, wisdom, and ability to listen helped me understand myself and my dating experiences in a deeper way. I left our conversations feeling more grounded and with greater confidence moving forward.</p>
-            <span class="testimonial-source">— Dovid R.</span>
+            <span class="testimonial-source">Dovid R.</span>
           </div>
         </div>
       </div>
@@ -784,7 +784,7 @@
         <div class="page-header">
           <p class="eyebrow" style="justify-content:flex-start;">Get in touch</p>
           <h2>Have a question?<br><em>I'd love to hear from you.</em></h2>
-          <p>If you'd like a calm, impartial perspective on your dating journey, I'd be happy to connect. Every enquiry is private and handled with complete discretion.</p>
+          <p>If you'd like a calm, objective perspective on your dating journey, I'd be happy to connect. Every enquiry is private and handled with complete discretion.</p>
         </div>
         <div class="form-wrap">
           <form id="contact-form" action="https://formsubmit.co/dmtuchinsky@gmail.com" method="POST">
@@ -924,5 +924,40 @@
     });
   }
 </script>
+  <!-- WhatsApp timed popup -->
+  <style>
+    .wa-popup{position:fixed;bottom:92px;right:24px;max-width:300px;background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 28px rgba(92,43,71,0.18);padding:18px 20px;display:flex;gap:12px;align-items:flex-start;z-index:1000;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .4s ease,transform .4s ease;font-family:'Lora',serif;}
+    .wa-popup.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+    .wa-popup .wa-icon{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:#fff;}
+    .wa-popup .wa-title{font-weight:600;color:var(--plum-dark);font-size:.95rem;margin-bottom:4px;}
+    .wa-popup .wa-text{font-size:.82rem;color:var(--text-mid);line-height:1.5;margin-bottom:10px;}
+    .wa-popup .wa-cta{display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:50px;}
+    .wa-popup .wa-close{position:absolute;top:8px;right:10px;background:none;border:none;font-size:1.1rem;line-height:1;color:var(--text-soft);cursor:pointer;}
+    @media (max-width:480px){.wa-popup{right:12px;left:12px;max-width:none;bottom:84px;}}
+  </style>
+  <div class="wa-popup" id="wa-popup" role="dialog" aria-label="Chat on WhatsApp">
+    <button class="wa-close" id="wa-popup-close" aria-label="Close">&times;</button>
+    <span class="wa-icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"><path d="M16.04 3C9.37 3 3.97 8.4 3.97 15.07c0 2.5.65 4.83 1.79 6.85L3 29l7.27-1.91a12.02 12.02 0 0 0 5.77 1.47h.01c6.67 0 12.07-5.4 12.07-12.07C28.12 8.4 22.71 3 16.04 3z"/></svg></span>
+    <div class="wa-body">
+      <div class="wa-title">Have a question?</div>
+      <div class="wa-text">Chat privately with Marisa on WhatsApp. Every message is handled with complete discretion.</div>
+      <a class="wa-cta" href="https://wa.me/972555664624" target="_blank" rel="noopener">Message on WhatsApp</a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var p = document.getElementById('wa-popup');
+      var c = document.getElementById('wa-popup-close');
+      if (!p) return;
+      setTimeout(function () {
+        try { if (sessionStorage.getItem('waPopupDismissed')) return; } catch (e) {}
+        p.classList.add('show');
+      }, 30000);
+      if (c) c.addEventListener('click', function () {
+        p.classList.remove('show');
+        try { sessionStorage.setItem('waPopupDismissed', '1'); } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 </html>
